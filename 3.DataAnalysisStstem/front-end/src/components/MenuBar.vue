@@ -6,6 +6,7 @@
       <el-menu-item>无人机管理</el-menu-item>
       <el-menu-item>系统设置</el-menu-item>
     </el-menu>
+    <el-button type="text" class="logout-btn">登出</el-button>
   </div>
 </template>
 
@@ -25,7 +26,7 @@ export default {
 
 .el-menu {
   width: 150px;
-  height: 700px;
+  height: 650px;
   background-color: #303133;
   border: none;
 }
@@ -36,5 +37,14 @@ export default {
 
 .el-menu-item:hover {
   background-color: #1e1e1e;
+}
+
+.logout-btn {
+  padding-bottom: 20px;
+  height: 50px;
+  width: 150px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
 }
 </style>
