@@ -3,6 +3,7 @@ import {createRouter, createWebHashHistory} from "vue-router";
 import LoginPage from "@/components/LoginPage";
 import FrontPage from "@/components/FrontPage";
 import MainPage from "@/components/MainPage";
+import SensorMangePage from "@/components/SensorMangePage";
 
 const routes = [
     {
@@ -15,12 +16,16 @@ const routes = [
     },
     {
         path: '/home',
-        redirect: '/home/front',
+        redirect: '/home/sensor',
         component: MainPage,
         children: [
             {
                 path: 'front',
                 component: FrontPage,
+            },
+            {
+                path: 'sensor',
+                component: SensorMangePage,
             },
         ]
     },

@@ -2,10 +2,10 @@
   <div>
     <el-image :src="require('@/assets/MainBg.jpeg')" fit="contain" class="bg"></el-image>
     <el-container class="container">
-      <el-aside>
+      <el-aside style="width: 180px; padding: 0 0 0 0; margin: 0 0 0 0">
         <MenuBar></MenuBar>
       </el-aside>
-      <el-main>
+      <el-main style="padding: 15px 0 0 0; margin: 0 0 0 0;">
         <router-view></router-view>
       </el-main>
     </el-container>

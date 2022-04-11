@@ -18,15 +18,15 @@ export default {
 
 <style lang="less" scoped>
 .container {
-  margin-top: 10px;
-  margin-left: 10px;
+  margin-top: 15px;
+  margin-left: 15px;
   background-color: #303133;
   opacity: 0.8;
 }
 
 .el-menu {
   width: 150px;
-  height: 650px;
+  height: 640px;
   background-color: #303133;
   border: none;
 }
