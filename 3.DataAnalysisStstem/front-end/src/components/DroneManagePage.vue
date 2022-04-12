@@ -1,25 +1,20 @@
 <template>
   <el-space direction="vertical" alignment="start" :size="30">
-    <el-space :size="20">
+    <el-space alignment="start" :size="30">
       <InfoCard type="online" title="在线" :value="10"></InfoCard>
-      <InfoCard type="offline" title="维修中" :value="10"></InfoCard>
-      <InfoCard type="repair" title="离线" :value="10"></InfoCard>
+      <InfoCard type="offline" title="离线" :value="10"></InfoCard>
+      <InfoCard type="repair" title="维修中" :value="10"></InfoCard>
     </el-space>
-    <el-table :data="dataFilter" :cell-style="cellStyle" :row-style="rowStyle" :highlight-current-row="false" :header-row-style="headerRowStyle" :header-cell-style="headerCellStyle" :max-height="700">
+    <el-table :data="data" :cell-style="cellStyle" :row-style="rowStyle" :highlight-current-row="false" :header-row-style="headerRowStyle" :header-cell-style="headerCellStyle" :max-height="700">
       <el-table-column label="状态" prop="status" align="center" :width="100">
         <template #default="scope">
           <StatusDot :type="scope.row.status"></StatusDot>
         </template>
       </el-table-column>
       <el-table-column label="序号" prop="no" align="center" :sortable="true" :width="150"></el-table-column>
-      <el-table-column label="区域" prop="sector" align="center" :sortable="true" :width="150">
-        <template #default="scope">
-          {{scope.row.x}}-{{scope.row.y}}
-        </template>
-      </el-table-column>
       <el-table-column :width="360">
         <template #header>
-          <el-input placeholder="搜索序号、区域号" v-model="input"></el-input>
+          <el-input placeholder="搜索序号" v-model="input"></el-input>
         </template>
         <template #default>
           <el-space>
@@ -36,7 +31,7 @@
 import InfoCard from "@/components/InfoCard";
 import StatusDot from "@/components/StatusDot";
 export default {
-  name: "SensorMangePage",
+  name: "DroneManagePage",
   components: {
     InfoCard,
     StatusDot,
@@ -45,9 +40,9 @@ export default {
     return {
       input: '',
       data: [
-        {status: 'online', no: 1, x: 0, y: 0},
-        {status: 'offline', no: 2, x: 0, y: 1},
-        {status: 'repair', no: 3, x: 0, y: 2},
+        {status: 'online', no: 1},
+        {status: 'offline', no: 2},
+        {status: 'repair', no: 3},
       ]
     }
   },
@@ -74,11 +69,6 @@ export default {
         border: 'none',
       }
     },
-    dataFilter() {
-      return this.data.filter((data) => {
-        this.input.value === '' || data.no.toString().includes(this.input.value)
-      })
-    },
   },
   methods: {
     rowStyle(row) {
@@ -93,7 +83,7 @@ export default {
         }
       }
     }
-  }
+  },
 }
 </script>
 
@@ -116,7 +106,7 @@ export default {
 
 .el-table {
   border-radius: 10px;
-  background-color: #2a2a2a;
+  background: none;
   opacity: 0.9;
 }
 
@@ -126,5 +116,4 @@ export default {
   box-shadow: none;
   color: white;
 }
-
 </style>

@@ -20,14 +20,14 @@ export default {
 .container {
   margin-top: 15px;
   margin-left: 15px;
-  background-color: #303133;
-  opacity: 0.8;
+  background-color: #2a2a2a;
+  opacity: 0.9;
 }
 
 .el-menu {
   width: 150px;
   height: 640px;
-  background-color: #303133;
+  background-color: #2a2a2a;
   border: none;
 }
 
@@ -36,7 +36,7 @@ export default {
 }
 
 .el-menu-item:hover {
-  background-color: #1e1e1e;
+  background-color: #1a1a1a;
 }
 
 .logout-btn {

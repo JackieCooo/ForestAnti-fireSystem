@@ -26,6 +26,9 @@ export default {
         case 'repair':
           style.backgroundColor = '#E6A23C'
           break
+        case 'charging':
+          style.backgroundColor = '#409EFF'
+          break
       }
       return style
     }

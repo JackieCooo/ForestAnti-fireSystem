@@ -4,6 +4,8 @@ import LoginPage from "@/components/LoginPage";
 import FrontPage from "@/components/FrontPage";
 import MainPage from "@/components/MainPage";
 import SensorMangePage from "@/components/SensorMangePage";
+import DroneManagePage from "@/components/DroneManagePage";
+import SettingPage from "@/components/SettingPage";
 
 const routes = [
     {
@@ -16,7 +18,7 @@ const routes = [
     },
     {
         path: '/home',
-        redirect: '/home/sensor',
+        redirect: '/home/drone',
         component: MainPage,
         children: [
             {
@@ -26,6 +28,14 @@ const routes = [
             {
                 path: 'sensor',
                 component: SensorMangePage,
+            },
+            {
+                path: 'drone',
+                component: DroneManagePage,
+            },
+            {
+                path: 'setting',
+                component: SettingPage,
             },
         ]
     },
