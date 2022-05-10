@@ -5,7 +5,7 @@
       <InfoCard type="offline" title="维修中" :value="10"></InfoCard>
       <InfoCard type="repair" title="离线" :value="10"></InfoCard>
     </el-space>
-    <el-table :data="dataFilter" :cell-style="cellStyle" :row-style="rowStyle" :highlight-current-row="false" :header-row-style="headerRowStyle" :header-cell-style="headerCellStyle" :max-height="700">
+    <el-table :data="data" :cell-style="cellStyle" :row-style="rowStyle" :highlight-current-row="false" :header-row-style="headerRowStyle" :header-cell-style="headerCellStyle" :max-height="700">
       <el-table-column label="状态" prop="status" align="center" :width="100">
         <template #default="scope">
           <StatusDot :type="scope.row.status"></StatusDot>
