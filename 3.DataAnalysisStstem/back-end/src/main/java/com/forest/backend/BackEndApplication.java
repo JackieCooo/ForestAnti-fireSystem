@@ -1,11 +1,13 @@
 package com.forest.backend;
 
 import com.forest.backend.service.AsyncTaskService;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
 @SpringBootApplication
+@MapperScan("com.forest.backend.mapper")
 public class BackEndApplication {
 
     public static void main(String[] args) {
