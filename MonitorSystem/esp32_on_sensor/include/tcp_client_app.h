@@ -9,6 +9,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "freertos/event_groups.h"
+#include "freertos/semphr.h"
 
 #include "esp_err.h"
 #include "esp_system.h"
@@ -20,6 +21,8 @@
 #include "lwip/err.h"
 #include "lwip/sockets.h"
 #include "lwip/sys.h"
+
+#include "uart_app.h"
 
 #define HOST_IP_ADDR "192.168.3.51"
 #define SENSOR_DATA_PORT 20001

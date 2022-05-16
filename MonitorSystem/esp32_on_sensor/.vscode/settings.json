@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "semphr.h": "c",
+        "uart.h": "c",
+        "esp_intr_alloc.h": "c",
+        "uart_types.h": "c",
+        "task.h": "c"
+    }
+}

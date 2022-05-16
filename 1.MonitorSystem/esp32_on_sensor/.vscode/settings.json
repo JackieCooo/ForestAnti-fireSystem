@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "semphr.h": "c",
-        "uart.h": "c"
-    }
-}
