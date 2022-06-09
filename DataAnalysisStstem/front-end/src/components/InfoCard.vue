@@ -26,6 +26,7 @@ export default {
     value: Number,
   },
   computed: {
+    // 根据输入的类型返回对应的卡片样式
     cardIcon() {
       if (this.type === 'online') {
         return onlineIcon

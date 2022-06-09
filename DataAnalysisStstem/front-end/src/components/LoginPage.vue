@@ -5,7 +5,7 @@
       <h1 class="title">登录</h1>
       <el-input placeholder="请输入用户名" v-model="username" clearable></el-input>
       <el-input placeholder="请输入密码" v-model="password" :show-password="false"></el-input>
-      <el-button round type="primary" class="login-btn">登录</el-button>
+      <el-button round type="primary" class="login-btn" @click="login">登录</el-button>
     </el-space>
   </div>
 </template>
@@ -19,10 +19,11 @@ export default {
       password: '',
     }
   },
-  components: {
-
-  },
-
+  methods: {
+    login() {
+      this.$store.commit("login", {})
+    }
+  }
 }
 </script>
 

@@ -5,7 +5,7 @@
       <InfoCard type="offline" title="离线" :value="10"></InfoCard>
       <InfoCard type="repair" title="维修中" :value="10"></InfoCard>
     </el-space>
-    <el-table :data="data" :cell-style="cellStyle" :row-style="rowStyle" :highlight-current-row="false" :header-row-style="headerRowStyle" :header-cell-style="headerCellStyle" :max-height="700">
+    <el-table :data="filterTableData" :cell-style="cellStyle" :row-style="rowStyle" :highlight-current-row="false" :header-row-style="headerRowStyle" :header-cell-style="headerCellStyle" :max-height="700">
       <el-table-column label="状态" prop="status" align="center" :width="100">
         <template #default="scope">
           <StatusDot :type="scope.row.status"></StatusDot>
@@ -47,6 +47,7 @@ export default {
     }
   },
   computed: {
+    // 定制表格单元格样式
     cellStyle() {
       return {
         textAlign: 'center',
@@ -55,12 +56,14 @@ export default {
         border: 'none',
       }
     },
+    // 定制表格表头样式
     headerRowStyle() {
       return {
         backgroundColor: '#1a1a1a',
         border: 'none',
       }
     },
+    // 定制表格表头单元格样式
     headerCellStyle() {
       return {
         color: 'white',
@@ -69,8 +72,13 @@ export default {
         border: 'none',
       }
     },
+    // 根据搜索框内容过滤显示数据
+    filterTableData() {
+      return this.data.filter((data) => !this.input || data.no.toString().includes(this.input))
+    },
   },
   methods: {
+    // 定制表格行样式
     rowStyle(row) {
       if (row.rowIndex % 2 === 0) {
         return {

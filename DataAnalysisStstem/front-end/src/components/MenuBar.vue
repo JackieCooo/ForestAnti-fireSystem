@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <el-menu>
-      <el-menu-item>首页</el-menu-item>
-      <el-menu-item>传感器管理</el-menu-item>
-      <el-menu-item>无人机管理</el-menu-item>
-      <el-menu-item>系统设置</el-menu-item>
+      <el-menu-item index="home" @click="gotoPage">首页</el-menu-item>
+      <el-menu-item index="sensor" @click="gotoPage">传感器管理</el-menu-item>
+      <el-menu-item index="drone" @click="gotoPage">无人机管理</el-menu-item>
+      <el-menu-item index="setting" @click="gotoPage">系统设置</el-menu-item>
     </el-menu>
     <el-button type="text" class="logout-btn">登出</el-button>
   </div>
@@ -12,7 +12,14 @@
 
 <script>
 export default {
-  name: "MenuBar"
+  name: "MenuBar",
+  methods: {
+    gotoPage(e) {
+      console.log(e.index)
+      if (e.index === 'home') this.$router.push('/home')
+      else this.$router.push('/home/' + e.index)
+    }
+  }
 }
 </script>
 

@@ -18,7 +18,7 @@ const routes = [
     },
     {
         path: '/home',
-        redirect: '/home/drone',
+        redirect: '/home/front',
         component: MainPage,
         children: [
             {
