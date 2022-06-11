@@ -6,7 +6,7 @@
       <el-menu-item index="drone" @click="gotoPage">无人机管理</el-menu-item>
       <el-menu-item index="setting" @click="gotoPage">系统设置</el-menu-item>
     </el-menu>
-    <el-button type="text" class="logout-btn">登出</el-button>
+    <el-button type="text" class="logout-btn" @click="logout">登出</el-button>
   </div>
 </template>
 
@@ -18,6 +18,10 @@ export default {
       console.log(e.index)
       if (e.index === 'home') this.$router.push('/home')
       else this.$router.push('/home/' + e.index)
+    },
+    logout() {
+      this.$store.commit("logout")
+      this.$router.push("/login")
     }
   }
 }

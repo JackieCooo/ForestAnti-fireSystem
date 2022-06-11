@@ -10,7 +10,7 @@ import SettingPage from "@/components/SettingPage";
 const routes = [
     {
         path: '/',
-        redirect: '/home',
+        redirect: '/login',
     },
     {
         path: '/login',

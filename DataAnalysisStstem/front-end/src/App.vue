@@ -22,5 +22,6 @@ export default {
   padding: 0 0 0 0;
   margin: 0 0 0 0;
   overflow: hidden;
+  text-align: center;
 }
 </style>

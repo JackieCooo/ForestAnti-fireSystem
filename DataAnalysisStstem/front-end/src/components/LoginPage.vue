@@ -20,10 +20,23 @@ export default {
     }
   },
   methods: {
-    login() {
-      this.$store.commit("login", {})
+    async login() {
+      await this.$http({
+        url: '/user/login',
+        params: {
+          username: this.username,
+          password: this.password
+        },
+        method: 'post'
+      }).then((res)=>{
+        const userData = res.data.data
+        this.$store.commit("login", userData)
+        this.$router.push("/home/front")
+      }).catch((err)=>{
+        console.log(err)
+      })
     }
-  }
+  },
 }
 </script>
 
@@ -56,8 +69,8 @@ export default {
 
 .login-box {
   position: absolute;
-  top: 150px;
-  left: 550px;
+  top: 20%;
+  left: 35%;
   width: 400px;
   height: 400px;
   background-color: white;
